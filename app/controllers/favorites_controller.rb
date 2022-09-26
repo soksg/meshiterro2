@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
     post_image=PostImage.find(params[:post_image_id])
     favorite=current_user.favorites.new(post_image_id: post_image.id)
     favorite.save
-    redirext_to post_image_path(post_image)
+    redirect_to post_image_path(post_image)
   end
 
   def destroy
